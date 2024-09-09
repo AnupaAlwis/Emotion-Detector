@@ -28,11 +28,13 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
+        working-directory: ./flask-server
         run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
+        working-directory: ./flask-server
         run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment jobs
@@ -40,7 +42,7 @@ jobs:
         with:
           name: python-app
           path: |
-            release.zip
+            flask-server/release.zip
             !venv/
 
   deploy:
@@ -57,7 +59,7 @@ jobs:
           name: python-app
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip
+        run: unzip flask-server/release.zip
 
       
       - name: 'Deploy to Azure Web App'
@@ -67,3 +69,4 @@ jobs:
           app-name: 'emotion-detect-2'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EA33440BC9FC4C9F993AFA2632DBE55F }}
+          path: flask-server
