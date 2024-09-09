@@ -325,7 +325,7 @@ CORS(app)
 
 # Load the model
 face_classifier = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-classifier = load_model('../model.h5')
+classifier = load_model('./model.h5')
 
 emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprise']
 
