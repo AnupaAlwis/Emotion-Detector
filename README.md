@@ -38,4 +38,4 @@ This project is licensed under the [Apache License 2.0](https://choosealicense.c
 
 ## Contact
 
-If you have any questions or suggestions, please feel free to reach out to us at [isurajithalwis@gmail.com](mailto:isurajithalwis@gmail.com).
+If you have any questions or suggestions, please feel free to reach out to me at [isurajithalwis@gmail.com](mailto:isurajithalwis@gmail.com).
